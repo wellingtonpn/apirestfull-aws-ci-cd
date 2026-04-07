@@ -3,12 +3,15 @@ package com.wellingtonpn.apirestfull.apirestfull_aws_ci_cd.domain;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.wellingtonpn.apirestfull.apirestfull_aws_ci_cd.domain.enums.Role;
+
 public class User {
 	
 	private Long id;
 	private String nome;
 	private String email;
 	private String senha;
+	private Role role;
 	private List<Pedido> pedido = new ArrayList<Pedido>();
 	private List<EstagioDoPedido> estagioDoPedido = new ArrayList<EstagioDoPedido>();
 	
@@ -16,13 +19,14 @@ public class User {
 		super();
 	}
 
-	public User(Long id, String nome, String email, String senha, List<Pedido> pedido,
+	public User(Long id, String nome, String email, String senha, Role role, List<Pedido> pedido,
 			List<EstagioDoPedido> estagioDoPedido) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
+		this.role = role;
 		this.pedido = pedido;
 		this.estagioDoPedido = estagioDoPedido;
 	}
@@ -59,6 +63,14 @@ public class User {
 		this.senha = senha;
 	}
 
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 	public List<Pedido> getPedido() {
 		return pedido;
 	}
@@ -74,5 +86,6 @@ public class User {
 	public void setEstagioDoPedido(List<EstagioDoPedido> estagioDoPedido) {
 		this.estagioDoPedido = estagioDoPedido;
 	}
+	
 	
 }
